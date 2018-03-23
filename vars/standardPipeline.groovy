@@ -18,6 +18,7 @@ def call(body) {
 
         if(COMMIT_MESSAGE.startsWith("[maven-release-plugin]")) {
             currentBuild.result = 'FAILURE'
+            echo "Commit message starts with maven-release-plugin. Exiting..."
             sh "exit ./build.sh 1" 
         }
 
