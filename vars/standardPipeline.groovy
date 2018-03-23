@@ -17,7 +17,7 @@ def call(body) {
         sh "export DOCKER_MACHINE_NAME='default'"
         */
         echo "Exporting docker enviroment variables"
-        sh "eval $(docker-machine env dev)"
+        //sh "eval $(docker-machine env dev)"
 
         def VARS = checkout scm
 
