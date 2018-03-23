@@ -4,6 +4,12 @@ def call(body) {
         durabilityHint('PERFORMANCE_OPTIMIZED')
     ])
     
+    // Exporting Docker env variables
+    sh "export DOCKER_TLS_VERIFY='1'"
+    sh "export DOCKER_HOST='tcp://192.168.99.100:2376'"
+    sh "export DOCKER_CERT_PATH='/Users/abraao.queiroz/.docker/machine/machines/default'"
+    sh "export DOCKER_MACHINE_NAME='default'"
+    
     node {
         // Clean workspace before doing anything        
         deleteDir()
