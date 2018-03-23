@@ -92,9 +92,11 @@ def call(body) {
                         echo 'Initializing Docker phase'
                         //sh "mvn package docker:build docker:push"
                         docker.withRegistry('https://docker-registry-default.pocose.cabal.com.br', 'docker-credentials-id') {
-                            def customImage = docker.build("my-image")
+                            def app = docker.build("my-image")
                             /* Push the container to the custom Registry */
-                            customImage.push()
+                            app.push()
+                            app.push("${env.BUILD_NUMBER}")
+                            app.push("latest")
                         }
                     }
                 }
