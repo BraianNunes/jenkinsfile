@@ -104,7 +104,7 @@ def call(body) {
                         echo 'Initializing Docker phase'
                         //sh "mvn package docker:build docker:push"
                         docker.withRegistry('https://docker-registry-default.pocose.cabal.com.br', 'docker-openshift-credentials') {
-                            def app = docker.build("my-image")
+                            def app = docker.build("sippe-jenkins-poc")
                             /* Push the container to the custom Registry */
                             app.push()
                             app.push("${env.BUILD_NUMBER}")
