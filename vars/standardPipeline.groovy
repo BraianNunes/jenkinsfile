@@ -14,7 +14,7 @@ def call(body) {
         env.DOCKER_TLS_VERIFY=1
         env.DOCKER_HOST="tcp://192.168.99.100:2376"
         env.DOCKER_CERT_PATH="/Users/abraao.queiroz/.docker/machine/machines/default"
-        env.DOCKER_MACHINE_NAME=default
+        env.DOCKER_MACHINE_NAME="default"
         
         echo "Exporting docker enviroment variables"
         //sh "eval $(docker-machine env dev)"
